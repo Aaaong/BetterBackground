@@ -1,0 +1,17 @@
+{
+	"id": "BetterBackground",
+	"name": "Better Background",
+	"display_name": "Better Background",
+	"author": [
+		"Aong"
+	],
+	"description": "Weather, sky and scenery behind the game, a calmer swirling background, and windows that fade into each other. From Chromite.",
+	"prefix": "betterbg",
+	"main_file": "steamodded.lua",
+	"priority": 0,
+	"version": "1.0.0",
+	"dependencies": [
+		"Lovely (>=0.9)"
+	],
+	"allow_redistribution": true
+}

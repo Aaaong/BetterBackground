@@ -1,0 +1,56 @@
+# Better Background: loads every Lua file as a requireable module, then appends a small bootstrap
+# to main.lua. No pattern patches, so nothing here depends on exact lines of the game source; the
+# features wrap game functions at runtime instead (src/hooks.lua).
+
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 0
+
+[[patches]]
+[patches.module]
+source = "src/init.lua"
+before = "main.lua"
+name = "better_background"
+
+[[patches]]
+[patches.module]
+source = "src/hooks.lua"
+before = "main.lua"
+name = "better_background.hooks"
+
+[[patches]]
+[patches.module]
+source = "src/config.lua"
+before = "main.lua"
+name = "better_background.config"
+
+[[patches]]
+[patches.module]
+source = "src/background.lua"
+before = "main.lua"
+name = "better_background.background"
+
+[[patches]]
+[patches.module]
+source = "src/calm.lua"
+before = "main.lua"
+name = "better_background.calm"
+
+[[patches]]
+[patches.module]
+source = "src/fade.lua"
+before = "main.lua"
+name = "better_background.fade"
+
+[[patches]]
+[patches.module]
+source = "src/settings.lua"
+before = "main.lua"
+name = "better_background.settings"
+
+[[patches]]
+[patches.copy]
+target = "main.lua"
+position = "append"
+sources = ["src/bootstrap.lua"]
